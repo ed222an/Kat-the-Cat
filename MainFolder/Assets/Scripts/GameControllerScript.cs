@@ -20,7 +20,7 @@ public class GameControllerScript : MonoBehaviour
 		pauseIsActive = false;
 		showInstructions = false;
 		
-		//originalSong = audio.clip;
+		originalSong = audio.clip;
 	}
 	
 	void Update ()
@@ -30,11 +30,8 @@ public class GameControllerScript : MonoBehaviour
 		{
 			if(Time.timeScale == 1.0f)
 			{
-				/*
-				audio.clip = pauseMenuClip;
-				audio.volume = 1.0f;
-				audio.Play();
-				*/
+				playSong(pauseMenuClip);
+
 				Time.timeScale = 0.0f;
 				pauseIsActive = true;
 			}
@@ -44,11 +41,7 @@ public class GameControllerScript : MonoBehaviour
 				pauseIsActive = false;
 				showInstructions = false;
 
-				/*
-				audio.clip = originalSong;
-				audio.volume = 0.25f;
-				audio.Play();
-				*/
+				playSong(originalSong);
 			}
 		}
 	}
@@ -57,10 +50,10 @@ public class GameControllerScript : MonoBehaviour
 	void OnGUI ()
 	{
 		string instructionsHeader = "Instructions!";
-		string instructionsBody = "Use the A,D- or the left, right arrow keys to move Catnicorn around.\n" +
-			"Use the space key to jump\n" +
-				"Jump on enemies to kill them and try not to fall down\n\n" +
-				"Keep it safe kids and be careful not to die!\nI hear that's dangerous!";
+		string instructionsBody = 	"Use the A,D- or the left, right arrow keys to move Catnicorn around.\n" +
+									"Use the space key to jump\n" +
+									"Jump on enemies to kill them and try not to fall down\n\n" +
+									"Keep it safe kids and be careful not to die!\nI hear that's dangerous!";
 
 		// Set up gui skin
 		GUI.skin = guiSkin;
@@ -115,8 +108,6 @@ public class GameControllerScript : MonoBehaviour
 			// Instructiontext.
 			GUI.Label(new Rect((Screen.width/2 - 25),20,100,20), instructionsHeader, menuInstructionsHeaderStyle);
 			GUI.Label(new Rect((Screen.width/2 - offset),50,100,20), instructionsBody, menuInstructionsContentStyle);
-			//GUI.Label(new Rect((Screen.width/2 - 100),20,100,20), instructionsHeader, menuInstructionsHeaderStyle);
-			//GUI.Label(new Rect((Screen.width/2 - 50),50,100,20), instructionsBody, menuInstructionsContentStyle);
 			
 			// Return to pause screen.
 			if(GUI.Button(new Rect((Screen.width/2 - 100),300,100,50), "Back"))
@@ -132,15 +123,18 @@ public class GameControllerScript : MonoBehaviour
 				pauseIsActive = false;
 				Time.timeScale = 1.0f;
 
-				/*
-				audio.clip = originalSong;
-				audio.volume = 0.25f;
-				audio.Play();
-				*/
+				playSong(originalSong);
 			}
 			
 			// Ends the GUI-group.
 			GUI.EndGroup();
 		}
+	}
+
+	void playSong(AudioClip clip)
+	{
+		audio.clip = clip;
+		audio.volume = 0.25f;
+		audio.Play();
 	}
 }

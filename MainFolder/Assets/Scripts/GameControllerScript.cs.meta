@@ -2,7 +2,8 @@ fileFormatVersion: 2
 guid: 95d9c55bd7e1384449a56b64e19b75ab
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - pauseMenuClip: {fileID: 8300000, guid: dcfd10f3693f76140b547bb0f716d13e, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

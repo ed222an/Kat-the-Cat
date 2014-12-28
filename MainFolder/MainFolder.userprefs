@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameControllerScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PlayerHealth.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameControllerScript.cs" Line="116" Column="43" />
+      <File FileName="Assets\StompDeath.cs" Line="8" Column="29" />
+      <File FileName="Assets\PlayerHealth.cs" Line="50" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
