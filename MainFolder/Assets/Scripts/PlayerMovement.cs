@@ -33,8 +33,6 @@ public class PlayerMovement : MonoBehaviour
 			doubleJump = false;
 		}
 
-		anim.SetFloat ("vSpeed", rigidbody2D.velocity.y);
-
 		/*
 		// Disables movement while jumping
 		if(!grounded)
