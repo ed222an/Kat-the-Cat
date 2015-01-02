@@ -46,13 +46,17 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\PlayerHealth.cs" />
+     <Compile Include="Assets\Scripts\BouncePlayer.cs" />
+     <Compile Include="Assets\Scripts\Coin.cs" />
      <Compile Include="Assets\Scripts\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\GameControllerScript.cs" />
+     <Compile Include="Assets\Scripts\KillZone.cs" />
      <Compile Include="Assets\Scripts\Menu.cs" />
+     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\SmoothFollow2D.cs" />
-     <Compile Include="Assets\StompDeath.cs" />
+     <Compile Include="Assets\Scripts\Stomp.cs" />
+     <Compile Include="Assets\Scripts\StompDeath.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Development/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>

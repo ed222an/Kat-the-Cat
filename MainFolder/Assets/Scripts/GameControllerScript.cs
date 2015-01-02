@@ -13,6 +13,9 @@ public class GameControllerScript : MonoBehaviour
 	private AudioClip originalSong;
 	private bool pauseIsActive;
 	private bool showInstructions;
+	private GameObject spawnPoint;
+	private GameObject[] coins;
+	private int coinAmount;
 	
 	void Start()
 	{
@@ -21,10 +24,20 @@ public class GameControllerScript : MonoBehaviour
 		showInstructions = false;
 		
 		originalSong = audio.clip;
+
+		coins = GameObject.FindGameObjectsWithTag ("Coin");
 	}
 	
 	void Update ()
 	{
+		// Get the current number of coins.
+		coins = GameObject.FindGameObjectsWithTag ("Coin");
+
+		if(coins.Length <= 0)
+		{
+			Debug.Log("WIN!");
+		}
+
 		// Enables pause-functionality.
 		if(Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
 		{
@@ -50,7 +63,8 @@ public class GameControllerScript : MonoBehaviour
 	void OnGUI ()
 	{
 		string instructionsHeader = "Instructions!";
-		string instructionsBody = 	"Use the A,D- or the left, right arrow keys to move Catnicorn around.\n" +
+		string instructionsBody = 	"Collect all coins to win.\n" +
+									"Use the A,D- or the left, right arrow keys to move Catnicorn around.\n" +
 									"Use the space key to jump\n" +
 									"Jump on enemies to kill them and try not to fall down\n\n" +
 									"Keep it safe kids and be careful not to die!\nI hear that's dangerous!";

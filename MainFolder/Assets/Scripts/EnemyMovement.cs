@@ -9,9 +9,31 @@ public class EnemyMovement : MonoBehaviour
 	private bool changeDir = false;
 	private bool resetTimer = false;
 
+	public bool facingRight = true;
+
 	// Use this for initialization
-	void Start () {
-	
+	void Start ()
+	{
+		int r = Random.Range (1, 3);
+		if (r == 1)
+		{
+			speed = speed * -1;
+		}
+	}
+
+	void FixedUpdate()
+	{
+		rigidbody2D.velocity = new Vector3 (speed, rigidbody2D.velocity.y, 0.0f);
+
+		// Flip the player
+		if (speed > 0 && !facingRight)
+		{
+			Flip();
+		}
+		else if(speed < 0 && facingRight)
+		{
+			Flip();
+		}
 	}
 	
 	// Update is called once per frame
@@ -34,7 +56,14 @@ public class EnemyMovement : MonoBehaviour
 				resetTimer = false;
 			}
 		}
+	}
 
-		rigidbody2D.velocity = new Vector3 (speed, 0.0f, 0.0f);
+	// Flips the world around the player, allowing us to only use 1 set of animations.
+	private void Flip()
+	{
+		facingRight = !facingRight;
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
 	}
 }

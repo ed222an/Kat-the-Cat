@@ -1,0 +1,35 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class StompDeath : MonoBehaviour
+{
+	private GameObject player;
+	public bool stomp = false;
+	private int damageAmount = 1;
+
+	// Use this for initialization
+	void Start ()
+	{
+		player = GameObject.FindGameObjectWithTag ("Player");
+	}
+
+	void Update()
+	{
+		if(stomp)
+		{
+			Destroy(gameObject);
+		}
+	}
+
+	void OnCollisionEnter2D(Collision2D other)
+	{
+		if(!stomp)
+		{
+			if(other.gameObject.tag == "Player")
+			{
+				PlayerHealth ph = player.GetComponent<PlayerHealth>();
+				ph.DoDamage(damageAmount);
+			}
+		}
+	}
+}
