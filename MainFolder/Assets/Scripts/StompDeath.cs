@@ -5,6 +5,7 @@ public class StompDeath : MonoBehaviour
 {
 	private GameObject player;
 	public bool stomp = false;
+	public int health = 3;
 	private int damageAmount = 1;
 
 	// Use this for initialization
@@ -16,6 +17,12 @@ public class StompDeath : MonoBehaviour
 	void Update()
 	{
 		if(stomp)
+		{
+			stomp = false;
+			health = health - 1;
+		}
+
+		if(health <= 0)
 		{
 			Destroy(gameObject);
 		}

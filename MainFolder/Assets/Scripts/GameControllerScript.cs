@@ -7,6 +7,7 @@ public class GameControllerScript : MonoBehaviour
 	public GUIStyle menuHeaderStyle;
 	public GUIStyle menuInstructionsHeaderStyle;
 	public GUIStyle menuInstructionsContentStyle;
+	public GUIStyle scoreStyle;
 	public AudioClip pauseMenuClip;
 	
 	private GUISkin guiSkin;
@@ -14,8 +15,10 @@ public class GameControllerScript : MonoBehaviour
 	private bool pauseIsActive;
 	private bool showInstructions;
 	private GameObject spawnPoint;
+
 	private GameObject[] coins;
-	private int coinAmount;
+	public Texture2D coinImage;
+	public int coinScore = 0;
 	
 	void Start()
 	{
@@ -30,12 +33,10 @@ public class GameControllerScript : MonoBehaviour
 	
 	void Update ()
 	{
-		// Get the current number of coins.
-		coins = GameObject.FindGameObjectsWithTag ("Coin");
-
-		if(coins.Length <= 0)
+		// Loads the next level.
+		if(coinScore == coins.Length)
 		{
-			Debug.Log("WIN!");
+			Application.LoadLevel(Application.loadedLevel + 1);
 		}
 
 		// Enables pause-functionality.
@@ -74,6 +75,10 @@ public class GameControllerScript : MonoBehaviour
 		
 		// Pause prompt.
 		GUI.Label(new Rect(Screen.width - 120, 0, 200, 20), "Pause: \"Esc\" || \"P\"");
+
+		// Score text
+		GUI.DrawTexture(new Rect(0, 0, 60, 60), coinImage, ScaleMode.ScaleToFit, true, 0);
+		GUI.Label(new Rect(42, 0, 200, 20), ": " + coinScore + "/" + coins.Length, scoreStyle);
 		
 		if(pauseIsActive)
 		{

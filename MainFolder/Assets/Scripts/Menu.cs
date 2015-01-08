@@ -23,6 +23,16 @@ public class Menu : MonoBehaviour
 		Application.LoadLevel (Application.loadedLevel + 1);
 	}
 
+	public void RestartLevel()
+	{
+		Application.LoadLevel (Application.loadedLevel - 1);
+	}
+
+	public void QuitToMainMenu()
+	{
+		Application.LoadLevel(0);
+	}
+
 	public void ShowInstructions()
 	{
 		instructions.active = true;

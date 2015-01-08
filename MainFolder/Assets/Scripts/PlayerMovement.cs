@@ -13,11 +13,14 @@ public class PlayerMovement : MonoBehaviour
 	public Transform groundCheck;
 	public LayerMask whatIsGround;
 	public float jumpForce = 700f;
+	public AudioClip jumpClip;
 	private float groundRadius = 0.2f;
 	private bool doubleJump = false;
 
+	// Bouncing
 	public bool bounce = false;
 	public float bouncePower;
+	public AudioClip bounceClip;
 	private float originalBouncePower = 10.0f;
 
 	// Use this for initialization
@@ -69,6 +72,7 @@ public class PlayerMovement : MonoBehaviour
 			rigidbody2D.velocity = new Vector3 (move * maxSpeed, bouncePower, 0.0f);
 			bounce = false;
 			bouncePower = originalBouncePower;
+			audio.PlayOneShot(bounceClip);
 		}
 	}
 
@@ -79,6 +83,7 @@ public class PlayerMovement : MonoBehaviour
 		{
 			anim.SetBool ("Ground", false);
 			rigidbody2D.AddForce(new Vector2(0,jumpForce));
+			audio.PlayOneShot(jumpClip);
 
 			if(!doubleJump && !grounded)
 			{

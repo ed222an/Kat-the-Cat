@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\Menu.cs" />
      <Compile Include="Assets\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\ReverseBouncePlayer.cs" />
      <Compile Include="Assets\Scripts\SmoothFollow2D.cs" />
      <Compile Include="Assets\Scripts\Stomp.cs" />
      <Compile Include="Assets\Scripts\StompDeath.cs" />
