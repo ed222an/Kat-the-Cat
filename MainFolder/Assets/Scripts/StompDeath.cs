@@ -8,10 +8,16 @@ public class StompDeath : MonoBehaviour
 	public int health = 3;
 	private int damageAmount = 1;
 
+	private bool takingDamage = false;
+	public int blinkAmount = 10;
+	private Color originalColor;
+	private Color damageColor = Color.white;
+
 	// Use this for initialization
 	void Start ()
 	{
 		player = GameObject.FindGameObjectWithTag ("Player");
+		originalColor = renderer.material.color;
 	}
 
 	void Update()

@@ -1,10 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SmoothFollow2D.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Stomp.cs">
     <Files>
-      <File FileName="Assets\Scripts\StompDeath.cs" Line="22" Column="24" />
-      <File FileName="Assets\Scripts\Menu.cs" Line="13" Column="1" />
-      <File FileName="Assets\Scripts\SmoothFollow2D.cs" Line="15" Column="65" />
+      <File FileName="Assets\Scripts\StompDeath.cs" Line="13" Column="2" />
+      <File FileName="Assets\Scripts\PlayerHealth.cs" Line="48" Column="4" />
+      <File FileName="Assets\Scripts\Stomp.cs" Line="31" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
