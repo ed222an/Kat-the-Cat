@@ -4,6 +4,7 @@ using System.Collections;
 public class Stomp : MonoBehaviour
 {
 	private Renderer parentRenderer;
+	private StompDeath parentStompDeath;
 	private Color originalColor;
 	public Color damageColor = Color.green;
 
@@ -11,6 +12,7 @@ public class Stomp : MonoBehaviour
 	void Start ()
 	{
 		parentRenderer = GetComponentInParent<SpriteRenderer> ();
+		parentStompDeath = GetComponentInParent<StompDeath> ();
 		originalColor = parentRenderer.material.color;
 	}
 	
@@ -23,18 +25,13 @@ public class Stomp : MonoBehaviour
 	{
 		if(coll.gameObject.tag == "Player")
 		{
-			transform.root.gameObject.GetComponent<StompDeath>().stomp = true;
+			parentStompDeath.stomp = true;
 			PlayerMovement pm = coll.GetComponent<PlayerMovement>();
 			pm.bounce = true;
 
 			parentRenderer.material.color = damageColor;
 			yield return new WaitForSeconds(0.1f);
 			parentRenderer.material.color = originalColor;
-		}
-
-		if(coll.gameObject.tag == "Ground")
-		{
-			transform.root.gameObject.GetComponent<StompDeath>().stomp = true;
 		}
 	}
 }

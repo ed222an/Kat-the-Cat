@@ -33,6 +33,11 @@ public class Menu : MonoBehaviour
 		Application.LoadLevel(0);
 	}
 
+	public void QuitGame()
+	{
+		Application.Quit();
+	}
+
 	public void ShowInstructions()
 	{
 		instructions.active = true;
