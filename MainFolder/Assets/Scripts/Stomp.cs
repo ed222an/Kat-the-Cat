@@ -4,7 +4,7 @@ using System.Collections;
 public class Stomp : MonoBehaviour
 {
 	private Renderer parentRenderer;
-	private StompDeath parentStompDeath;
+	private EnemyHealth parentStompDeath;
 	private Color originalColor;
 	public Color damageColor = Color.green;
 
@@ -12,7 +12,7 @@ public class Stomp : MonoBehaviour
 	void Start ()
 	{
 		parentRenderer = GetComponentInParent<SpriteRenderer> ();
-		parentStompDeath = GetComponentInParent<StompDeath> ();
+		parentStompDeath = GetComponentInParent<EnemyHealth> ();
 		originalColor = parentRenderer.material.color;
 	}
 	

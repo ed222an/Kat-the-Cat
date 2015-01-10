@@ -10,12 +10,7 @@ public class Menu : MonoBehaviour
 	void Start ()
 	{
 		instructions = GameObject.FindGameObjectWithTag (tagInstructions);
-		instructions.active = false;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+		instructions.SetActive(false);
 	}
 
 	public void LoadNextLevel()
@@ -40,11 +35,11 @@ public class Menu : MonoBehaviour
 
 	public void ShowInstructions()
 	{
-		instructions.active = true;
+		instructions.SetActive(true);
 	}
 
 	public void CloseInstructions()
 	{
-		instructions.active = false;
+		instructions.SetActive(false);
 	}
 }

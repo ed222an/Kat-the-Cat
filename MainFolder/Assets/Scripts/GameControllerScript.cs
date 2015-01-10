@@ -65,7 +65,7 @@ public class GameControllerScript : MonoBehaviour
 	{
 		string instructionsHeader = "Instructions!";
 		string instructionsBody = 	"Collect all coins to win.\n" +
-									"Use the A,D- or the left, right arrow keys to move Catnicorn around.\n" +
+									"Use the A,D- or the left, right arrow keys to move Kat around.\n" +
 									"Use the space key to jump\n" +
 									"Jump on enemies to kill them and try not to fall down\n\n" +
 									"Keep it safe kids and be careful not to die!\nI hear that's dangerous!";
