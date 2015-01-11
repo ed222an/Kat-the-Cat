@@ -20,6 +20,9 @@ public class GameControllerScript : MonoBehaviour
 	public Texture2D coinImage;
 	public int coinScore = 0;
 	
+	private PlayerHealth ph;
+	private int livesLeft;
+	
 	void Start()
 	{
 		guiSkin = null;
@@ -29,6 +32,8 @@ public class GameControllerScript : MonoBehaviour
 		originalSong = audio.clip;
 
 		coins = GameObject.FindGameObjectsWithTag ("Coin");
+
+		ph = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerHealth> ();
 	}
 	
 	void Update ()
@@ -38,6 +43,8 @@ public class GameControllerScript : MonoBehaviour
 		{
 			Application.LoadLevel(Application.loadedLevel + 1);
 		}
+
+		livesLeft = ph.health;
 
 		// Enables pause-functionality.
 		if(Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
@@ -63,8 +70,10 @@ public class GameControllerScript : MonoBehaviour
 	// The pause menu.
 	void OnGUI ()
 	{
-		string instructionsHeader = "Instructions!";
-		string instructionsBody = 	"Collect all coins to win.\n" +
+		string pauseText = "Pause: \"Esc\" || \"P\"";
+		string livesText = "Lives: ";
+		string instructionsHeaderText = "Instructions!";
+		string instructionsBodyText = 	"Collect all coins to win.\n" +
 									"Use the A,D- or the left, right arrow keys to move Kat around.\n" +
 									"Use the space key to jump\n" +
 									"Jump on enemies to kill them and try not to fall down\n\n" +
@@ -74,11 +83,14 @@ public class GameControllerScript : MonoBehaviour
 		GUI.skin = guiSkin;
 		
 		// Pause prompt.
-		GUI.Label(new Rect(Screen.width - 120, 0, 200, 20), "Pause: \"Esc\" || \"P\"");
+		GUI.Label(new Rect(Screen.width - 120, 0, 200, 20), pauseText);
 
 		// Score text
 		GUI.DrawTexture(new Rect(0, 0, 60, 60), coinImage, ScaleMode.ScaleToFit, true, 0);
 		GUI.Label(new Rect(42, 0, 200, 20), ": " + coinScore + "/" + coins.Length, scoreStyle);
+
+		// Lives text
+		GUI.Label(new Rect(20, Screen.height - 50, 200, 20), livesText + livesLeft, scoreStyle);
 		
 		if(pauseIsActive)
 		{
@@ -125,8 +137,8 @@ public class GameControllerScript : MonoBehaviour
 			GUI.BeginGroup(new Rect(0, 0, Screen.width, Screen.height));
 			
 			// Instructiontext.
-			GUI.Label(new Rect((Screen.width/2 - 25),20,100,20), instructionsHeader, menuInstructionsHeaderStyle);
-			GUI.Label(new Rect((Screen.width/2 - offset),50,100,20), instructionsBody, menuInstructionsContentStyle);
+			GUI.Label(new Rect((Screen.width/2 - 25),20,100,20), instructionsHeaderText, menuInstructionsHeaderStyle);
+			GUI.Label(new Rect((Screen.width/2 - offset),50,100,20), instructionsBodyText, menuInstructionsContentStyle);
 			
 			// Return to pause screen.
 			if(GUI.Button(new Rect((Screen.width/2 - 100),300,100,50), "Back"))
