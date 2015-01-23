@@ -1,0 +1,32 @@
+Initialize engine version: 4.6.0f3 (30840d631a27)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 780M (ID=0x119f)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\Development\GitHub\UnityGameProject\MainFolder\Builds\Kat the Cat_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\Development\GitHub\UnityGameProject\MainFolder\Builds\Kat the Cat_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\Development\GitHub\UnityGameProject\MainFolder\Builds\Kat the Cat_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\Development\GitHub\UnityGameProject\MainFolder\Builds\Kat the Cat_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\Development\GitHub\UnityGameProject\MainFolder\Builds\Kat the Cat_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\Development\GitHub\UnityGameProject\MainFolder\Builds\Kat the Cat_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.043 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: D:\Development\GitHub\UnityGameProject\MainFolder\Builds\Kat the Cat_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\Development\GitHub\UnityGameProject\MainFolder\Builds\Kat the Cat_Data\Managed\System.dll (this message is harmless)
+UnloadTime: 2.139972 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1355.
+Total: 11.215611 ms (FindLiveObjects: 0.039344 ms CreateObjectMapping: 0.011118 ms MarkObjects: 0.198858 ms  DeleteObjects: 10.612620 ms)
+
+UnloadTime: 1.337696 ms
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 136 unused Assets to reduce memory usage. Loaded Objects now: 213.
+Total: 4.469394 ms (FindLiveObjects: 0.010263 ms CreateObjectMapping: 0.015823 ms MarkObjects: 0.146684 ms  DeleteObjects: 3.954501 ms)
+
