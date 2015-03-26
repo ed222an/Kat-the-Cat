@@ -2,8 +2,8 @@
 ================
 
 Kat the Cat - made by Emil Dannberger 2014/2015
-Game made using Unity: http://unity3d.com/
-Project in the course 1DV437 Grundläggande Spelprogrammering at Linnaeus University, Kalmar, Sweden.
+
+Game made using Unity: http://unity3d.com/ as a project for the course 1DV437 - Grundläggande Spelprogrammering at Linnaeus University, Kalmar, Sweden.
 
 ==== INSTRUCTIONS ==== 
 
